@@ -1,0 +1,16 @@
+{
+  "name": "SG Weatherforecast",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node app"
+  },
+  "description": "SG Weatherforecast",
+  "author": {
+    "name": "SG Weatherforecast"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4"
+  }
+}
