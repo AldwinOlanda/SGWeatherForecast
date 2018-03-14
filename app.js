@@ -6,8 +6,6 @@ const weather = express();
 
 const https = require('https');
 const host = 'api.data.gov.sg';
-//const host = 'api.worldweatheronline.com';
-//const wwoApiKey = '819cfaf349d44332a18154340181302';
 
 weather.use(
   bodyParser.urlencoded({
@@ -19,16 +17,13 @@ weather.use(bodyParser.json());
 
 /* GET home page. */
 weather.post('/', function (req, res) {
-    //res.render('index', { title: 'Express' });
-   
+  
     let sglocation = req.body.result.parameters['location'];
   
     let date = '';
     let datetime = '';
   
-    
-
-    /* Check if the Datetime parameter exist */
+  /* Check if the Datetime parameter exist */
     if (req.body.result.parameters['date']) {
         /* Include time inside the datetime parameter */
         datetime = req.body.result.parameters['date']+'T12:00:00';
