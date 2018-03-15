@@ -73,13 +73,16 @@ function callWeatherApi(datetime,date,location) {
                          output = 'The condition in ' + forecasts[i]['area'] +' is '+ forecasts[i]['forecast'];
                          break;                 
                       }
-                      else
-                      {
-                        output = 'Location is not found.';
-                        
-                      }
-                      
-                }
+                                           
+                  }
+                   
+                   i = 0;
+                   for (i = 0; i != forecasts.length; i++) {
+                           if (forecasts[i]['area']=='City'){
+                               output = 'The condition in ' + forecasts[i]['area'] +' is '+ forecasts[i]['forecast'];
+                               break;                 
+                         }
+                   }
               
                 // Resolve the promise with the output text
                 console.log(output);
