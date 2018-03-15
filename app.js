@@ -70,12 +70,13 @@ function callWeatherApi(datetime,date,location) {
                 for (i = 0; i != forecasts.length; i++) {
                   
                     if (forecasts[i]['area']==location){
-                         output = 'The condition in ' + forecasts[i]['area'] +' is '+ forecasts[i]['forecast'];
+                         output = 'The condition in Singapore, ' + forecasts[i]['area'] +' is '+ forecasts[i]['forecast'];
                          break;                 
                       }
                                            
                   }
                    
+                  if (output==''){
                    i = 0;
                    for (i = 0; i != forecasts.length; i++) {
                            if (forecasts[i]['area']=='City'){
@@ -83,6 +84,7 @@ function callWeatherApi(datetime,date,location) {
                                break;                 
                          }
                    }
+                  }
               
                 // Resolve the promise with the output text
                 console.log(output);
