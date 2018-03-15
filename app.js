@@ -43,6 +43,7 @@ weather.post('/', function (req, res) {
     
 });
 
+//function to launch http call and check for the weather forecast on a given Singapore location 
 function callWeatherApi(datetime,date,location) {
     return new Promise((resolve, reject) => {
         // Create the path for the HTTP request to get the weather
@@ -65,6 +66,7 @@ function callWeatherApi(datetime,date,location) {
                 let forecasts = [];
                 forecasts = items[0]['forecasts'];
               
+                //Loop through the data and check for the weather for the location given
                 let i = 0;
                 let output = '';
                 for (i = 0; i != forecasts.length; i++) {
@@ -75,7 +77,7 @@ function callWeatherApi(datetime,date,location) {
                       }
                                            
                   }
-                   
+                  // in the event that the location is not existing, do another check and default the location to City  
                   if (output==''){
                    i = 0;
                    for (i = 0; i != forecasts.length; i++) {
