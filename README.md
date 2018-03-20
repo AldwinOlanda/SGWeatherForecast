@@ -1,4 +1,4 @@
-# Api.ai - sample webhook implementation using Node.js 
+# A webhook for SG Weatherforecast that can be implemented in Api.ai 
 
 More info about Api.ai webhooks could be found here:
 [Api.ai Webhook](https://docs.api.ai/docs/webhook)
